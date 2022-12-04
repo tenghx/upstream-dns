@@ -3,7 +3,7 @@ name: Build adh_upstream_config
 on:
   workflow_dispatch:
   schedule:
-    - cron: "00 04 * * *"
+    - cron: "30 03 * * *"
   push:
     branches:
       - main
