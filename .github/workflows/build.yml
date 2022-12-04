@@ -1,0 +1,52 @@
+name: Build adh_upstream_config
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "00 04 * * *"
+  push:
+    branches:
+      - main
+    paths-ignore: 
+      - "**/README.md" 
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+  
+    steps:
+      - name: Set variables
+        run: |
+          echo "RELEASE_NAME=$(date +%Y%m%d%H%M)" >> $GITHUB_ENV
+        shell: bash
+          
+      - name: Checkout codebase
+        uses: actions/checkout@v3
+
+      - name: Build adh_upstream_config file
+        run: |
+          bash ./run.sh
+          
+      - name: Generate sha256 checksum for config files
+        run: |
+          cd publish || exit 1
+          for name in $(ls *.conf); do
+            sha256sum ${name} > ./${name}.sha256sum
+          done
+
+      - name: Git push assets to "release" branch
+        run: |
+          cd publish || exit 1
+          git init
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "68494740+tenghx@users.noreply.github.com"
+          git checkout -b release
+          git add --all
+          git commit -m "${{ env.RELEASE_NAME }}"
+          git remote add adh-upstream "https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}"
+          git push -f adh-upstream release
+
+      - name: Delete publish directory
+        run: |
+          rm -rf  publish
