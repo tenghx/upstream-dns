@@ -40,12 +40,12 @@ jobs:
           cd publish || exit 1
           git init
           git config --local user.name "github-actions[bot]"
-          git config --local user.email "68494740+tenghx@users.noreply.github.com"
+          git config --local user.email "68494740+github-actions[bot]@users.noreply.github.com"
           git checkout -b release
-          git add --all
+          git add .
           git commit -m "${{ env.RELEASE_NAME }}"
-          git remote add adh-upstream "https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}"
-          git push -f adh-upstream release
+          git remote add origin "https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}"
+          git push -f origin release
 
       - name: Delete publish directory
         run: |
