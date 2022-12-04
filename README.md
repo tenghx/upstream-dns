@@ -2,15 +2,15 @@
 
 Improve resolve speed for Chinese domains.
 
-# Download link
+# Download link.
 
 - upstream_dns.conf: [https://raw.githubusercontent.com/tenghx/adh-upstream/release/upstream_dns.conf](https://raw.githubusercontent.com/tenghx/adh-upstream/release/upstream_dns.conf)
 - upstream_dns.conf.sha256sum: [https://raw.githubusercontent.com/tenghx/adh-upstream/release/upstream_dns.conf.sha256sum](https://raw.githubusercontent.com/tenghx/adh-upstream/release/upstream_dns.conf.sha256sum)
 
 # Credits
 
-[github.com/felixonmars/dnsmasq-china-list](https://github.com/felixonmars/dnsmasq-china-list)
+- [github.com/felixonmars/dnsmasq-china-list](https://github.com/felixonmars/dnsmasq-china-list)
 
 # License
 
-MIT
+[MIT](https://github.com/tenghx/adh-upstream/blob/master/LICENSE)
