@@ -1,6 +1,6 @@
 # Adguardhome upstream config
 
-Improve resolve speed for Chinese domains.
+Improve resolve speed for Chinese domains, and get the fastest CDN node.
 
 # Download links
 
