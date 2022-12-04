@@ -2,7 +2,7 @@
 
 Improve resolve speed for Chinese domains.
 
-# Download link.
+# Download links
 
 - upstream_dns.conf: [https://raw.githubusercontent.com/tenghx/adh-upstream/release/upstream_dns.conf](https://raw.githubusercontent.com/tenghx/adh-upstream/release/upstream_dns.conf)
 - upstream_dns.conf.sha256sum: [https://raw.githubusercontent.com/tenghx/adh-upstream/release/upstream_dns.conf.sha256sum](https://raw.githubusercontent.com/tenghx/adh-upstream/release/upstream_dns.conf.sha256sum)
