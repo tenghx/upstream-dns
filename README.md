@@ -1,11 +1,11 @@
-# Adguardhome upstream config
+# Upstream DNS
 
-Improve resolve speed for Chinese domains, and get the fastest CDN node.
+Upstream dns configuration file for Adguardhome.
 
 # Download links
 
-- upstream_dns.conf: [https://raw.githubusercontent.com/tenghx/adh-upstream/release/upstream_dns.conf](https://raw.githubusercontent.com/tenghx/adh-upstream/release/upstream_dns.conf)
-- upstream_dns.conf.sha256sum: [https://raw.githubusercontent.com/tenghx/adh-upstream/release/upstream_dns.conf.sha256sum](https://raw.githubusercontent.com/tenghx/adh-upstream/release/upstream_dns.conf.sha256sum)
+- upstream_dns.conf: [https://raw.githubusercontent.com/tenghx/upstream-dns/release/upstream_dns.conf](https://raw.githubusercontent.com/tenghx/upstream-dns/release/upstream_dns.conf)
+- upstream_dns.conf.sha256sum: [https://raw.githubusercontent.com/tenghx/upstream-dns/release/upstream_dns.conf.sha256sum](https://raw.githubusercontent.com/tenghx/upstream-dns/release/upstream_dns.conf.sha256sum)
 
 # Credits
 
