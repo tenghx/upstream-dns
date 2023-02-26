@@ -47,6 +47,19 @@ jobs:
           git remote add origin "https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}"
           git push -f origin release
 
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          external_repository: tenghx/tenghx.github.io
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          publish_dir: ./publish
+          publish_branch: gh-pages
+          destination_dir: ./release
+          keep_files: true
+          user_name: 'github-actions[bot]'
+          user_email: '68494740+github-actions[bot]@users.noreply.github.com'
+          full_commit_message: "${{ env.RELEASE_NAME }}"
+ 
       - name: Delete publish directory
         run: |
           rm -rf  publish
