@@ -21,6 +21,6 @@ mkdir -p publish
 cd publish
 
 curl $ACCELERATED_CHINA_URL | sed '/#/d' | sed -r $HEAD_FILTER_PATTERN | sed -r $TAIL_FILTER_PATTERN | sed '#^$#d' | sort -u | tr "\n" "/" | sed -r $UPSTREAM_DNS_PATTERN_1 > $UPSTREAM_DNS_FILE
-curl $APPLE_CHINA_URL | sed '/#/d' | sed -r $HEAD_FILTER_PATTERN | sed -r $TAIL_FILTER_PATTERN | sed '#^$#d' | sort -u | tr "\n" "/" | sed -r $UPSTREAM_DNS_PATTERN_2 >> $UPSTREAM_DNS_FILE
-# curl $GOOGLE_CHINA_URL | sed '/#/d' | sed -r $HEAD_FILTER_PATTERN | sed -r $TAIL_FILTER_PATTERN | sed '#^$#d' | sort -u | tr "\n" "/" | sed -r $UPSTREAM_DNS_PATTERN_2 >> $UPSTREAM_DNS_FILE
-# printf $UPSTREAM_DNS_SPECIAL >> $UPSTREAM_DNS_FILE
+#curl $APPLE_CHINA_URL | sed '/#/d' | sed -r $HEAD_FILTER_PATTERN | sed -r $TAIL_FILTER_PATTERN | sed '#^$#d' | sort -u | tr "\n" "/" | sed -r $UPSTREAM_DNS_PATTERN_2 >> $UPSTREAM_DNS_FILE
+#curl $GOOGLE_CHINA_URL | sed '/#/d' | sed -r $HEAD_FILTER_PATTERN | sed -r $TAIL_FILTER_PATTERN | sed '#^$#d' | sort -u | tr "\n" "/" | sed -r $UPSTREAM_DNS_PATTERN_2 >> $UPSTREAM_DNS_FILE
+#printf $UPSTREAM_DNS_SPECIAL >> $UPSTREAM_DNS_FILE
