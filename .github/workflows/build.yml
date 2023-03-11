@@ -3,12 +3,12 @@ name: Build adh_upstream_config
 on:
   workflow_dispatch:
   schedule:
-    - cron: "30 15 * * *"
-  push:
-    branches:
-      - master
-    paths-ignore: 
-      - "**/README.md" 
+    - cron: "0 16 * * *"
+  #push:
+  #  branches:
+  #    - master
+  #  paths-ignore: 
+  #    - "**/README.md" 
 
 jobs:
   build:
