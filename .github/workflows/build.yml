@@ -3,7 +3,7 @@ name: Build adh_upstream_config
 on:
   workflow_dispatch:
   schedule:
-    - cron: "30 03 * * *"
+    - cron: "30 15 * * *"
   push:
     branches:
       - master
@@ -47,14 +47,14 @@ jobs:
           git remote add origin "https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}"
           git push -f origin release
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy to Web-source
         uses: peaceiris/actions-gh-pages@v3
         with:
-          external_repository: tenghx/tenghx.github.io
+          external_repository: tenghx/web-source
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           publish_dir: ./publish
-          publish_branch: gh-pages
-          destination_dir: ./release
+          publish_branch: main
+          destination_dir: ./static/release
           keep_files: true
           user_name: 'github-actions[bot]'
           user_email: '68494740+github-actions[bot]@users.noreply.github.com'
