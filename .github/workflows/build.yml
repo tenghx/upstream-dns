@@ -6,7 +6,7 @@ on:
     - cron: "0 16 * * *"
   #push:
   #  branches:
-  #    - master
+  #    - main
   #  paths-ignore: 
   #    - "**/README.md" 
 
