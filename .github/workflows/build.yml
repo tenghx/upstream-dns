@@ -48,12 +48,12 @@ jobs:
       #    git remote add origin "https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}"
       #    git push -f origin release
 
-      - name: Release and upload assets
-        run: |
-          cd publish || exit 1
-          gh release create ${{ env.TAG_NAME }} --latest --title ${{ env.RELEASE_NAME }} ./*.conf ./*.conf.sha256sum
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #- name: Release and upload assets
+      #  run: |
+      #    cd publish || exit 1
+      #    gh release create ${{ env.TAG_NAME }} --latest --title ${{ env.RELEASE_NAME }} ./*.conf ./*.conf.sha256sum
+      #  env:
+      #    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Deploy to web-source
         uses: peaceiris/actions-gh-pages@v3
