@@ -51,6 +51,7 @@ jobs:
       #- name: Release and upload assets
       #  run: |
       #    cd publish || exit 1
+      #    gh release list | awk -F '\t' '{print $3}' | while read -r line; do gh release delete -y "$line" --cleanup-tag; done
       #    gh release create ${{ env.TAG_NAME }} --latest --title ${{ env.RELEASE_NAME }} ./*.conf ./*.conf.sha256sum
       #  env:
       #    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
