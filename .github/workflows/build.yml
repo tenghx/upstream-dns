@@ -19,6 +19,7 @@ jobs:
       - name: Set variables
         run: |
           echo "RELEASE_NAME=$(date +%Y%m%d%H%M)" >> $GITHUB_ENV
+          echo "TAG_NAME=$(date +%Y%m%d%H%M)" >> $GITHUB_ENV
         shell: bash
           
       - name: Checkout codebase
@@ -47,19 +48,26 @@ jobs:
       #    git remote add origin "https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}"
       #    git push -f origin release
 
-      - name: Deploy to web-source
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          external_repository: tenghx/web-source
-          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          publish_dir: ./publish
-          publish_branch: main
-          destination_dir: ./static/release
-          keep_files: true
-          user_name: 'github-actions[bot]'
-          user_email: '68494740+github-actions[bot]@users.noreply.github.com'
-          full_commit_message: "${{ env.RELEASE_NAME }}"
- 
+      #- name: Deploy to web-source
+      #  uses: peaceiris/actions-gh-pages@v3
+      #  with:
+      #    external_repository: tenghx/web-source
+      #    deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+      #    publish_dir: ./publish
+      #    publish_branch: main
+      #    destination_dir: ./static/release
+      #    keep_files: true
+      #    user_name: 'github-actions[bot]'
+      #    user_email: '68494740+github-actions[bot]@users.noreply.github.com'
+      #    full_commit_message: "${{ env.RELEASE_NAME }}"
+
+      - name: Release and upload assets
+        run: |
+          cd publish || exit 1
+          gh release create ${{ env.TAG_NAME }} --generate-notes --latest --title ${{ env.RELEASE_NAME }} ./dlc.dat ./dlc.dat.*
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Delete publish directory
         run: |
           rm -rf  publish
