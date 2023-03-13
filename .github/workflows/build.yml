@@ -55,6 +55,19 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Deploy to web-source
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          external_repository: tenghx/web-source
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          publish_dir: ./publish
+          publish_branch: main
+          destination_dir: ./static/release
+          keep_files: true
+          user_name: 'github-actions[bot]'
+          user_email: '68494740+github-actions[bot]@users.noreply.github.com'
+          full_commit_message: "${{ env.RELEASE_NAME }}"
+
       - name: Delete publish directory
         run: |
           rm -rf  publish
