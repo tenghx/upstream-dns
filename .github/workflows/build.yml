@@ -3,7 +3,7 @@ name: Build upstream-dns
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 16 * * *"
+    - cron: "0 16 * * 4"
   #push:
   #  branches:
   #    - main
