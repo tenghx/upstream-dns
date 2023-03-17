@@ -1,4 +1,4 @@
-name: Build adh_upstream_config
+name: Build upstream-dns
 
 on:
   workflow_dispatch:
@@ -25,7 +25,7 @@ jobs:
       - name: Checkout codebase
         uses: actions/checkout@v3
 
-      - name: Build adh_upstream_config file
+      - name: Build dns config file
         run: |
           bash ./run.sh
           
@@ -55,14 +55,14 @@ jobs:
       #  env:
       #    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Deploy to web-source
+      - name: Deploy to release repo
         uses: peaceiris/actions-gh-pages@v3
         with:
-          external_repository: tenghx/web-source
+          external_repository: tenghx/release
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           publish_dir: ./publish
           publish_branch: main
-          destination_dir: ./static/release
+          destination_dir: ./upstream-dns
           keep_files: true
           user_name: 'github-actions[bot]'
           user_email: '68494740+github-actions[bot]@users.noreply.github.com'
