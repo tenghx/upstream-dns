@@ -1,6 +1,6 @@
-# Upstream DNS
+# Upstream-dns
 
-Upstream dns configuration file for Adguardhome.
+Custom upstream dns configuration file for Adguardhome.
 
 # Download links
 
