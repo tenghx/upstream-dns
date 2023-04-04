@@ -13,4 +13,4 @@ Custom upstream dns configuration file for Adguardhome.
 
 ## License
 
-[MIT](https://github.com/tenghx/adh-upstream/blob/master/LICENSE)
+[MIT](https://github.com/tenghx/adh-upstream/blob/main/LICENSE)
