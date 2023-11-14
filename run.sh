@@ -10,8 +10,8 @@ GOOGLE_CHINA_URL='https://raw.githubusercontent.com/felixonmars/dnsmasq-china-li
 HEAD_FILTER_PATTERN='s#^server=/##g'
 TAIL_FILTER_PATTERN='s#/114.114.114.114$##g'
 
-UPSTREAM_DNS_PATTERN_1='s#^.*$#https://1.1.1.1/dns-query\nhttps://[2606:4700:4700::1001]/dns-query\n[/&]https://223.5.5.5/dns-queryhttps://[2400:3200:baba::1]/dns-query#g'
-UPSTREAM_DNS_PATTERN_2='s#^.*$#\n[/&]https://223.5.5.5/dns-queryhttps://[2400:3200:baba::1]/dns-query#g'
+UPSTREAM_DNS_PATTERN_1='s#^.*$#https://1.1.1.1/dns-query\nhttps://[2606:4700:4700::1001]/dns-query\n[/&]https://223.5.5.5/dns-query\shttps://[2400:3200:baba::1]/dns-query#g'
+UPSTREAM_DNS_PATTERN_2='s#^.*$#\n[/&]https://223.5.5.5/dns-query\shttps://[2400:3200:baba::1]/dns-query#g'
 
 UPSTREAM_DNS_SPECIAL='\n[/g.cn/gkecnapps.cn/google.cn/googleapis.cn/googlecnapps.cn/gstatic.cn/gstaticcnapps.cn/]#'
 
