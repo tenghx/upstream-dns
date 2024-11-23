@@ -13,7 +13,7 @@ OUTFILE='upstream_dns.conf'
 mkdir -p publish
 cd publish
 
-curl $ACCELERATED_CHINA | awk -F/ 'BEGIN{ORS="/"} {print $2}' | sed -r $PATTERN_1 > $OUTFILE
-curl $APPLE_CHINA | awk -F/ 'BEGIN{ORS="/"} {print $2}' | sed -r $PATTERN_2 >> $OUTFILE
-#curl $GOOGLE_CHINA | awk -F/ 'BEGIN{ORS="/"} {print $2}' | sed -r $PATTERN_2 >> $OUTFILE
+curl $ACCELERATED_CHINA | awk -F/ 'BEGIN{ORS="/"} {print $2}' | sed -r '$PATTERN_1' > $OUTFILE
+curl $APPLE_CHINA | awk -F/ 'BEGIN{ORS="/"} {print $2}' | sed -r '$PATTERN_2' >> $OUTFILE
+#curl $GOOGLE_CHINA | awk -F/ 'BEGIN{ORS="/"} {print $2}' | sed -r '$PATTERN_2' >> $OUTFILE
 #printf $SPECIAL >> $OUTFILE
